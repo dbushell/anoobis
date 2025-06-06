@@ -1,14 +1,6 @@
 const workerScript = async function () {
   const wasmURL = "";
 
-  function hexDecode(str) {
-    const buf = new Uint8Array(str.length / 2);
-    for (let i = 0; i < str.length; i += 2) {
-      buf[i / 2] = Number.parseInt(str.substring(i, i + 2), 16);
-    }
-    return buf;
-  }
-
   const memory = new WebAssembly.Memory({
     initial: (1 * 1024 * 1024) / (64 * 1024),
     maximum: (2 * 1024 * 1024) / (64 * 1024),
@@ -41,7 +33,7 @@ const workerScript = async function () {
 
   self.addEventListener("message", (ev) => {
     if (ev.data.type === "challenge") {
-      seed.set(hexDecode(ev.data.challenge), 0);
+      seed.set(ev.data.seed, 0);
       const nonce = exports.solve(ev.data.difficulty);
       self.postMessage({
         type: "solution",
@@ -75,15 +67,17 @@ function hexDecode(str) {
   return buf;
 }
 
-const challenge = JSON.parse(
+const { challenge, difficulty } = JSON.parse(
   new TextDecoder().decode(hexDecode(cookies.get("anoobis-challenge"))),
 );
 
-console.log(challenge, cookies);
-
 worker.addEventListener("message", (ev) => {
   if (ev.data.type === "ready") {
-    worker.postMessage({ type: "challenge", ...challenge });
+    worker.postMessage({
+      type: "challenge",
+      seed: hexDecode(challenge),
+      difficulty,
+    });
   }
   if (ev.data.type === "solution") {
     const url = new URL("/.anoobis", document.location);
