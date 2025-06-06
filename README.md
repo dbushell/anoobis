@@ -2,6 +2,10 @@
 
 Anoobis is a (proof-of-concept) proof-of-work CAPTCHA.
 
+From the blog:
+
+* ["Weighing Souls with Anubis at Home"](https://dbushell.com/2025/06/07/weighing-souls-with-anubis-at-home/)
+
 Do not use this in production I'm just experimenting for educational purposes.
 
 Inspired by [Anubis](https://anubis.techaro.lol).
