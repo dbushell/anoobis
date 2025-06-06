@@ -123,14 +123,14 @@ const handleChallenge = (
   const accept = request.headers.get("accept") ?? "";
   if (!accept.includes("text/html")) {
     const response = new Response(null, { status: 404 });
-    response.headers.set("Cache-Control", "no-cache");
+    response.headers.set("Cache-Control", "no-store");
     return response;
   }
 
   // Return challenge page
   const response = new Response(ANOOBIS_HTML);
   response.headers.set("Content-Type", "text/html; charset=utf-8");
-  response.headers.set("Cache-Control", "no-cache");
+  response.headers.set("Cache-Control", "no-store");
 
   // Append encoded challenge cookie
   cookie.deleteCookie(response.headers, "anoobis-auth");
