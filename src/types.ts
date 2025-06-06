@@ -14,3 +14,9 @@ export type Config = {
     };
   };
 };
+
+export type Honoobis = {
+  Bindings: {
+    info: Info;
+  };
+};

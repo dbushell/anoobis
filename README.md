@@ -12,7 +12,13 @@ Inspired by [Anubis](https://anubis.techaro.lol).
 
 ## Usage
 
-Run the Deno server with:
+Run the basic example using [Hono](https://hono.dev) middleware:
+
+```sh
+deno run --allow-read --allow-net hono.ts
+```
+
+Or the advanced reverse proxy server for multiple websites:
 
 ```sh
 deno run --allow-read --allow-net main.ts

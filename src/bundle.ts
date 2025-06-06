@@ -36,3 +36,8 @@ export const bundle = async (dir: string): Promise<string> => {
   );
   return html;
 };
+
+// Challenge page bundle (around ~5 KB compressed)
+export const ANOOBIS_HTML = await bundle(
+  path.join(import.meta.dirname!, "./bundle"),
+);
