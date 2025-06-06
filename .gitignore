@@ -1,0 +1,16 @@
+/*
+**/*.*
+!**/*.ts
+!**/*.zig
+!build.zig
+!build.zig.zon
+!src/
+!src/bundle/*.js
+!src/bundle/*.css
+!src/bundle/*.html
+!src/bundle/*.wasm
+!anoobis.json
+!main.ts
+!.gitignore
+!LICENSE
+!README.md

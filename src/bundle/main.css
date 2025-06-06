@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  --dark: 0.15 0.05 260;
+  --light: 0.95 0.01 260;
+  background: light-dark(oklch(var(--light)), oklch(var(--dark)));
+  color: light-dark(oklch(var(--dark)), oklch(var(--light)));
+  color-scheme: light dark;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  line-height: 1.5;
+  min-block-size: 100svb;
+  padding: 30px;
+}
+
+:is(h1, p) {
+  text-align: center;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+p[role="image"] {
+  font-size: 3rem;
+  order: -1;
+}

@@ -1,0 +1,14 @@
+.{
+    .name = .anoobis,
+    .version = "0.1.0",
+    .fingerprint = 0xcc141eea18a605ae,
+    .minimum_zig_version = "0.14.1",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src/main.zig",
+        "LICENSE",
+        "README.md",
+    },
+}

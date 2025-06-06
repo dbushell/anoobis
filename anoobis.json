@@ -1,0 +1,17 @@
+{
+  "difficulty": 20,
+  "hostname": "0.0.0.0",
+  "port": 80,
+  "reverse_proxy": {
+    "anoobis.test": {
+      "protocol": "http",
+      "hostname": "localhost",
+      "port": 8765
+    },
+    "dbushell.test": {
+      "protocol": "https",
+      "hostname": "dbushell.com",
+      "port": 443
+    }
+  }
+}
