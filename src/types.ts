@@ -15,6 +15,7 @@ export type Config = {
   };
 };
 
+/** Hono server environment varaibles */
 export type Honoobis = {
   Bindings: {
     info: Info;
