@@ -65,6 +65,9 @@ Deno.serve({
   return handleChallenge(config, request, challenge);
 });
 
+/**
+ * Allow specific requests without challenge
+ */
 const bypass = (request: Request): boolean => {
   const secFetchMode = request.headers.get("Sec-Fetch-Mode");
   const secFetchDest = request.headers.get("Sec-Fetch-Dest");
@@ -76,6 +79,9 @@ const bypass = (request: Request): boolean => {
   return false;
 };
 
+/**
+ * Validate proof-of-work solution request
+ */
 const handleSolve = async (
   config: Config,
   request: Request,
@@ -105,6 +111,9 @@ const handleSolve = async (
   return response;
 };
 
+/**
+ * Respond with proof-of-work challenge page
+ */
 const handleChallenge = (
   config: Config,
   request: Request,

@@ -1,5 +1,7 @@
+/** Additional server request information  */
 export type Info = Deno.ServeHandlerInfo<Deno.NetAddr>;
 
+/** Anoobis configuration */
 export type Config = {
   difficulty: number;
   hostname: string;

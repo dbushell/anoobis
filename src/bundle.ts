@@ -1,7 +1,9 @@
 import * as path from "jsr:@std/path";
 import { encodeBase64 } from "jsr:@std/encoding/base64";
 
-/** Bundle all assets into one HTML document */
+/**
+ * Bundle all assets into one HTML document
+ */
 export const bundle = async (dir: string): Promise<string> => {
   let [html, css, js, wasm] = await Promise.all([
     Deno.readTextFile(
