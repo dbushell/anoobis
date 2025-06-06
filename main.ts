@@ -1,6 +1,5 @@
 #!/usr/bin/env -S deno run --allow-read --allow-net
 import * as cookie from "jsr:@std/http/cookie";
-
 import { challengeHash, validateHash } from "./src/pow.ts";
 import { handleProxy } from "./src/proxy.ts";
 import type { Config } from "./src/types.ts";
